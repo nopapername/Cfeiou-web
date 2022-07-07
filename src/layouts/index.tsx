@@ -1,23 +1,23 @@
-import React from 'react';
-import { Link, Outlet } from 'umi';
+import { initRem, setTitle } from '@/utils';
+import { useMount } from 'ahooks';
+import { Layout } from 'antd';
+import { Outlet } from 'umi';
 import styles from './index.less';
 
-export default function Layout() {
+const { Content } = Layout;
+
+export default function PageLayout() {
+  useMount(() => {
+    // 4k
+    initRem();
+    setTitle('四川飞欧装饰工程有限公司');
+  });
+
   return (
-    <div className={styles.navs}>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/docs">Docs</Link>
-        </li>
-        <li>
-          <a href="https://github.com/umijs/umi">Github</a>
-        </li>
-      </ul>
-      <div className={styles.divvv}>ssssssssssssssss</div>
-      <Outlet />
-    </div>
+    <Layout className={styles.layout}>
+      <Content>
+        <Outlet />
+      </Content>
+    </Layout>
   );
 }

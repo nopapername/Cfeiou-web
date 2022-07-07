@@ -1,10 +1,25 @@
 import pxtorem from 'postcss-pxtorem';
 export default {
   npmClient: 'yarn',
+  routes: [
+    {
+      path: '/',
+      component: '@/layouts',
+      routes: [
+        { path: '/', redirect: '/home' },
+        { path: '/home', component: '@/pages/home' },
+        { path: '/tamplate', component: '@/pages/tamplate' },
+      ],
+    },
+  ],
+
   extraPostCSSPlugins: [
     pxtorem({
-      rootValue: 10, // 根据设计稿设置
+      rootValue: 16, // 根据设计稿设置
       propList: ['*'],
     }),
-  ]
+  ],
+
+  tailwindcss: {},
+  plugins: ['@umijs/plugins/dist/tailwindcss'],
 };
