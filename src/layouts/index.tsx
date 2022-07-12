@@ -1,23 +1,32 @@
 import { initRem, setTitle } from '@/utils';
 import { useMount } from 'ahooks';
-import { Layout } from 'antd';
+import 'antd/dist/antd.less';
+import { useState } from 'react';
 import { Outlet } from 'umi';
+import Header from './header';
 import styles from './index.less';
 
-const { Content } = Layout;
+export interface ContextProps {
+  isMinScreen: boolean;
+  loading: boolean;
+}
 
-export default function PageLayout() {
+export default function Layout() {
+  const [isMinScreen, setIsMinScreen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   useMount(() => {
     // 4k
-    initRem();
+    initRem(isMinScreen, setIsMinScreen);
     setTitle('四川飞欧装饰工程有限公司');
   });
 
   return (
-    <Layout className={styles.layout}>
-      <Content>
-        <Outlet />
-      </Content>
-    </Layout>
+    <div className={styles.layout}>
+      <Header />
+      <div className={styles.layout__content}>
+        <Outlet context={{ isMinScreen, loading }} />
+      </div>
+    </div>
   );
 }

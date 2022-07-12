@@ -16,5 +16,14 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false,
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.mappings": {
+    "@":"${folder}/src"
+},
+"[css]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
 }
