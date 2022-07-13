@@ -1,4 +1,19 @@
 import _compact from 'lodash/compact';
+import debounce from 'lodash/debounce';
+
+/** 一般场景的防抖操作，先进行延时阻止，再进行操作 */
+export const debounceFunLazyly = debounce((fn) => {
+  fn && fn();
+}, 300);
+/** 表单页的防抖操作，先执行方法，再进行延时阻止 */
+export const debounceFun = debounce(
+  (fn) => {
+    fn && fn();
+  },
+  500,
+  { leading: true, trailing: false }
+);
+
 export function initRem(
   isMinScreen: boolean,
   setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>
@@ -11,7 +26,7 @@ export function initRem(
       if (deviceWidth <= 1138) {
         deviceWidth = 1138;
         setIsMinScreen(true);
-      } else if (deviceWidth > 1138 && isMinScreen) {
+      } else {
         setIsMinScreen(false);
       }
       const fontSize = deviceWidth / 1920;
@@ -21,7 +36,7 @@ export function initRem(
     }
   }
   setHtmlFontSize();
-  window.addEventListener('resize', setHtmlFontSize);
+  window.addEventListener('resize', debounce(setHtmlFontSize, 300));
 }
 
 export const setTitle = (...args: string[]) => {

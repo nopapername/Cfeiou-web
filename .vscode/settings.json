@@ -26,4 +26,7 @@
 "[css]": {
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
+"[less]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
 }

@@ -1,2 +1,1 @@
-import { initRem, setTitle } from './util';
-export { initRem, setTitle };
+export { debounceFun, debounceFunLazyly, initRem, setTitle } from './util';

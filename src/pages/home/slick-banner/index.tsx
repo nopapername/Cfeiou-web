@@ -1,9 +1,8 @@
 import arrow_bottom from '@/assets/banner/arrow_bottom.svg';
 import kv_text from '@/assets/banner/kv_text.svg';
-import type { ContextProps } from '@/layouts';
 import { Carousel } from 'antd';
 import classnames from 'classnames';
-import { useOutletContext } from 'umi';
+import { useModel } from 'umi';
 import styles from './index.less';
 
 const bannerList = [
@@ -52,8 +51,8 @@ const bannerList = [
 ];
 
 export default function SlickBanner() {
-  const { isMinScreen } = useOutletContext<ContextProps>();
-  console.log(isMinScreen);
+  const { isMinScreen } = useModel('usePublicState');
+
   return (
     <div className={styles.home_carousel}>
       <Carousel
@@ -66,16 +65,14 @@ export default function SlickBanner() {
         {bannerList.map((item, index) => (
           <div className={styles['home_carousel__banner']} key={item.key}>
             <img src={item.src} alt={item.alt} draggable="false" />
-            {!isMinScreen && (
-              <div
-                className={classnames(
-                  styles.home_carousel__text,
-                  styles[`home_carousel__text--banner_${++index}`]
-                )}
-              >
-                {item.desc}
-              </div>
-            )}
+            <div
+              className={classnames(
+                styles.home_carousel__text,
+                styles[`home_carousel__text--banner_${++index}`]
+              )}
+            >
+              {item.desc}
+            </div>
             <div>
               <div className={styles['home_carousel__cover']}>
                 <div className={styles['home_carousel__othertext']}>
@@ -86,21 +83,21 @@ export default function SlickBanner() {
                     <img src={arrow_bottom} alt="arrow" />
                   </div>
                   <svg
-                    width="266"
-                    height="266"
-                    viewBox="0 0 266 266"
+                    width={isMinScreen ? '106' : '266'}
+                    height={isMinScreen ? '106' : '266'}
+                    viewBox={isMinScreen ? '0 0 106 106' : '0 0 266 266'}
                     className={styles['home_carousel__scroll-circle']}
                   >
                     <circle
-                      cx="133"
-                      cy="133"
-                      r="131"
+                      cx={isMinScreen ? '53' : '133'}
+                      cy={isMinScreen ? '53' : '133'}
+                      r={isMinScreen ? '51' : '131'}
                       className={styles['home_carousel__scroll-circle-bg']}
                     ></circle>
                     <circle
-                      cx="133"
-                      cy="133"
-                      r="131"
+                      cx={isMinScreen ? '53' : '133'}
+                      cy={isMinScreen ? '53' : '133'}
+                      r={isMinScreen ? '51' : '131'}
                       className={styles['home_carousel__scroll-circle-front']}
                     ></circle>
                   </svg>
