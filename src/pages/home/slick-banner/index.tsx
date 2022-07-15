@@ -57,6 +57,7 @@ export default function SlickBanner() {
     <div className={styles.home_carousel}>
       <Carousel
         effect="fade"
+        dots={{ className: styles.home_carousel__dots }}
         autoplay
         autoplaySpeed={3000}
         infinite
@@ -83,21 +84,21 @@ export default function SlickBanner() {
                     <img src={arrow_bottom} alt="arrow" />
                   </div>
                   <svg
-                    width={isMinScreen ? '106' : '266'}
-                    height={isMinScreen ? '106' : '266'}
-                    viewBox={isMinScreen ? '0 0 106 106' : '0 0 266 266'}
+                    width={isMinScreen ? '106' : '218'}
+                    height={isMinScreen ? '106' : '218'}
+                    viewBox={isMinScreen ? '0 0 106 106' : '0 0 218 218'}
                     className={styles['home_carousel__scroll-circle']}
                   >
                     <circle
-                      cx={isMinScreen ? '53' : '133'}
-                      cy={isMinScreen ? '53' : '133'}
-                      r={isMinScreen ? '51' : '131'}
+                      cx={isMinScreen ? '53' : '109'}
+                      cy={isMinScreen ? '53' : '109'}
+                      r={isMinScreen ? '51' : '107'}
                       className={styles['home_carousel__scroll-circle-bg']}
                     ></circle>
                     <circle
-                      cx={isMinScreen ? '53' : '133'}
-                      cy={isMinScreen ? '53' : '133'}
-                      r={isMinScreen ? '51' : '131'}
+                      cx={isMinScreen ? '53' : '109'}
+                      cy={isMinScreen ? '53' : '109'}
+                      r={isMinScreen ? '51' : '107'}
                       className={styles['home_carousel__scroll-circle-front']}
                     ></circle>
                   </svg>

@@ -3,7 +3,7 @@
 .home_carousel {
   &__banner {
     width: 100%;
-    height: 938px;
+    height: 100vh;
     @media all and (max-width: 1138px) {
       height: 60vh;
     }
@@ -20,6 +20,9 @@
       width: 100%;
       object-fit: cover;
     }
+  }
+  &__dots {
+    bottom: 50px !important;
   }
   &__text {
     font-size: 88px;
@@ -59,7 +62,7 @@
   }
   /* prettier-ignore */
   &__othertext {
-    bottom: 0;
+    bottom: 100PX;
     left: 36px;
     margin: auto;
     position: absolute;
@@ -82,10 +85,10 @@
   &__scroll {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
-    width: 266PX;
-    height: 266PX;
-    right: 60PX;
-    bottom: -50PX;
+    width: 218PX;
+    height: 218PX;
+    right: 30PX;
+    bottom: 30PX;
     margin: auto;
     position: absolute;
     z-index: 2;
