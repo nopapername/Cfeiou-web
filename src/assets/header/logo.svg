@@ -1,0 +1,35 @@
+<svg width="8800" height="1400" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <path d="m0,0z" id="svg_1"/>
+  <path d="m0,0z" id="svg_2"/>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"方正大黑简体";font-variant:normal;font-weight:normal;src:url("#FontID1") format(svg)}
+    @font-face { font-family:"方正兰亭中粗黑_GBK";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .str0 {stroke:#009FE8;stroke-width:20;stroke-miterlimit:22.9256}
+    .fil2 {fill:#332C2B}
+    .fil1 {fill:#009FE8}
+    .fil0 {fill:#009FE8}
+    .fnt1 {font-weight:normal;font-size:306.15px;font-family:'方正大黑简体'}
+    .fnt0 {font-weight:normal;font-size:588.53px;font-family:'方正兰亭中粗黑_GBK'}
+   ]]>
+  </style>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="176007.81319" height="28002.92483" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="图层_x0020_1">
+   <metadata id="CorelCorpID_0Corel-Layer"/>
+   <g id="_2484031155664">
+    <path class="fil0" d="m1089.8722,566.94c94.58,47.28 97.13,202.56 82.64,265.34c-46.33,209.28 -538.76,420.87 -862.8,356.15c-240.78,-70.03 -203.06,-277.78 -140.49,-368.3c65.68,-99.09 129.24,-146.44 158.69,-179.7c-436.81,121.76 -562.44,913.19 421.65,733.93c808.03,-188.71 691.75,-850.19 340.31,-807.42z" id="svg_3"/>
+    <path class="fil1" d="m526.6122,554.39c194.73,-102.96 102.5,-130.52 499.42,-232.86c181.13,-46.71 372.77,-183.45 397.05,-321.53c-333.15,30.9 -870.22,300.89 -896.47,554.39z" id="svg_4"/>
+    <path class="fil1 str0" d="m356.7222,856.25l122.39,98.48c0,0 61,-232.65 112.89,-276.06c51.88,-43.41 135.4,-64.58 160.71,-63.24c0,0 231.17,-24.57 251.52,-21.8c0,0 285.54,-22.07 314.85,-213.41c0,0 -419.55,8.92 -591.08,79.01c0,0 -203.27,58.27 -273.39,187.63c0,0 -60.98,74.9 -97.89,209.39z" id="svg_5"/>
+   </g>
+   <text x="1683.0822" y="825.92" class="fil2 fnt0" id="svg_6">四川飞欧装饰工程有限公司</text>
+   <text x="1692.2622" y="1243.62" class="fil2 fnt1" id="svg_7">SiChuan FeiOu Decoration Engineering Co.,Ltd</text>
+  </g>
+ </g>
+</svg>

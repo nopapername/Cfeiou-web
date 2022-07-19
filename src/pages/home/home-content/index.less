@@ -17,6 +17,9 @@
     width: 90%;
     max-width: 1260px;
     margin-top: -30px;
+    @media screen and (max-width: 800px) {
+      margin-top: -70px;
+    }
     a {
       position: relative;
       display: flex;
@@ -28,6 +31,12 @@
       background: #ff7a59;
       padding-right: 35px;
       box-sizing: border-box;
+      @media screen and (max-width: 800px) {
+        height: 130px;
+        span {
+          font-size: 30px;
+        }
+      }
       &:hover {
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
@@ -74,12 +83,26 @@
         background: url('~@/assets/home/company_intro_icon.png');
         background-size: cover;
         transition: transform 0.3s ease;
+        @media screen and (max-width: 800px){
+          width: 94px;
+          height: 49px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -27px;
+        }
       }
+      
       &:nth-child(2):after {
         width: 76px;
         height: 60px;
         top: -40px;
         background-image: url('~@/assets/home/contact_us_icon.png');
+        @media screen and (max-width: 800px){
+          width: 55px;
+          height: 43px;
+          top: -24px;
+        }
       }
     }
     span {

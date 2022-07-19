@@ -1,12 +1,16 @@
+import logo from '@/assets/header/logo.svg'
+import logoMobile from '@/assets/header/logo_mobile.svg'
+import { useModel } from 'umi';
 import styles from './index.less';
 
 export default function HomePage() {
+  const { isMinScreen } = useModel('usePublicState');
   return (
     <section className={styles.header}>
-      <a href="/">
+      <a href="/" className={styles.header__a}>
         <img
-          className={styles.header__logo}
-          src={require('@/assets/header/logo.png')}
+          className={styles.header__a__logo}
+          src={isMinScreen ? logoMobile : logo}
           alt="logo"
         />
       </a>

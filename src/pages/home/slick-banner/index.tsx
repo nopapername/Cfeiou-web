@@ -1,5 +1,4 @@
 import arrow_bottom from '@/assets/banner/arrow_bottom.svg';
-import kv_text from '@/assets/banner/kv_text.svg';
 import { Carousel } from 'antd';
 import classnames from 'classnames';
 import { useModel } from 'umi';
@@ -57,7 +56,7 @@ export default function SlickBanner() {
     <div className={styles.home_carousel}>
       <Carousel
         effect="fade"
-        dots={{ className: styles.home_carousel__dots }}
+        dots={isMinScreen ? false : { className: styles.home_carousel__dots }}
         autoplay
         autoplaySpeed={3000}
         infinite
@@ -74,37 +73,34 @@ export default function SlickBanner() {
             >
               {item.desc}
             </div>
-            <div>
+            {!isMinScreen && <div>
               <div className={styles['home_carousel__cover']}>
-                <div className={styles['home_carousel__othertext']}>
-                  <img src={kv_text} alt="Exciting With You" />
-                </div>
                 <div className={styles['home_carousel__scroll']}>
                   <div className={styles['home_carousel__scroll-arrow']}>
                     <img src={arrow_bottom} alt="arrow" />
                   </div>
                   <svg
-                    width={isMinScreen ? '106' : '218'}
-                    height={isMinScreen ? '106' : '218'}
-                    viewBox={isMinScreen ? '0 0 106 106' : '0 0 218 218'}
+                    width='218'
+                    height='218'
+                    viewBox='0 0 218 218'
                     className={styles['home_carousel__scroll-circle']}
                   >
                     <circle
-                      cx={isMinScreen ? '53' : '109'}
-                      cy={isMinScreen ? '53' : '109'}
-                      r={isMinScreen ? '51' : '107'}
+                      cx='109'
+                      cy='109'
+                      r='107'
                       className={styles['home_carousel__scroll-circle-bg']}
                     ></circle>
                     <circle
-                      cx={isMinScreen ? '53' : '109'}
-                      cy={isMinScreen ? '53' : '109'}
-                      r={isMinScreen ? '51' : '107'}
+                      cx='109'
+                      cy='109'
+                      r='107'
                       className={styles['home_carousel__scroll-circle-front']}
                     ></circle>
                   </svg>
                 </div>
               </div>
-            </div>
+            </div>}
           </div>
         ))}
       </Carousel>
