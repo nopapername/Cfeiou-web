@@ -1,6 +1,5 @@
 import arrow_bottom from '@/assets/banner/arrow_bottom.svg';
 import { Carousel } from 'antd';
-import classnames from 'classnames';
 import { useModel } from 'umi';
 import styles from './index.less';
 
@@ -65,42 +64,44 @@ export default function SlickBanner() {
         {bannerList.map((item, index) => (
           <div className={styles['home_carousel__banner']} key={item.key}>
             <img src={item.src} alt={item.alt} draggable="false" />
-            <div
+            {/* <div
               className={classnames(
                 styles.home_carousel__text,
                 styles[`home_carousel__text--banner_${++index}`]
               )}
             >
               {item.desc}
-            </div>
-            {!isMinScreen && <div>
-              <div className={styles['home_carousel__cover']}>
-                <div className={styles['home_carousel__scroll']}>
-                  <div className={styles['home_carousel__scroll-arrow']}>
-                    <img src={arrow_bottom} alt="arrow" />
+            </div> */}
+            {!isMinScreen && (
+              <div>
+                <div className={styles['home_carousel__cover']}>
+                  <div className={styles['home_carousel__scroll']}>
+                    <div className={styles['home_carousel__scroll-arrow']}>
+                      <img src={arrow_bottom} alt="arrow" />
+                    </div>
+                    <svg
+                      width="218"
+                      height="218"
+                      viewBox="0 0 218 218"
+                      className={styles['home_carousel__scroll-circle']}
+                    >
+                      <circle
+                        cx="109"
+                        cy="109"
+                        r="107"
+                        className={styles['home_carousel__scroll-circle-bg']}
+                      ></circle>
+                      <circle
+                        cx="109"
+                        cy="109"
+                        r="107"
+                        className={styles['home_carousel__scroll-circle-front']}
+                      ></circle>
+                    </svg>
                   </div>
-                  <svg
-                    width='218'
-                    height='218'
-                    viewBox='0 0 218 218'
-                    className={styles['home_carousel__scroll-circle']}
-                  >
-                    <circle
-                      cx='109'
-                      cy='109'
-                      r='107'
-                      className={styles['home_carousel__scroll-circle-bg']}
-                    ></circle>
-                    <circle
-                      cx='109'
-                      cy='109'
-                      r='107'
-                      className={styles['home_carousel__scroll-circle-front']}
-                    ></circle>
-                  </svg>
                 </div>
               </div>
-            </div>}
+            )}
           </div>
         ))}
       </Carousel>
