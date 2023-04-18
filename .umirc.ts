@@ -16,4 +16,9 @@ export default {
   tailwindcss: {},
   plugins: ['@umijs/plugins/dist/tailwindcss', '@umijs/plugins/dist/model'],
   model: {},
+  lessLoader: {
+    modifyVars: {
+      hack: 'true; @import "@/common/css/variables.less";',
+    },
+  },
 };
