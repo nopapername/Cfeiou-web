@@ -1,4 +1,45 @@
-.home_container {
+.container__process {
   position: relative;
-  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 100px 30px 30px 45px;
+  &-card {
+    width: 230px;
+    height: 300px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    &__content {
+      width: calc(100% - 13px);
+      height: calc(100% - 13px);
+      position: relative;
+      border: 1px solid @green-color;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        transition: 0.3s ease-in-out;
+      }
+      &::before {
+        top: -13px;
+        left: -13px;
+        border-top: 1px solid @green-color;
+        border-left: 1px solid @green-color;
+      }
+      &::after {
+        right: -13px;
+        bottom: -13px;
+        border-bottom: 1px solid @green-color;
+        border-right: 1px solid @green-color;
+      }
+      &:hover::before,
+      &:hover::after {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }

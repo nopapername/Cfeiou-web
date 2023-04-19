@@ -18,7 +18,7 @@ export default {
   model: {},
   lessLoader: {
     modifyVars: {
-      hack: 'true; @import "@/common/css/variables.less";',
+      hack: 'true; @import "@/common/css/global.less";',
     },
   },
 };
