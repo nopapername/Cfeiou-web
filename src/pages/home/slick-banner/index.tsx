@@ -5,43 +5,43 @@ import styles from './index.less';
 
 const bannerList = [
   {
-    src: require('@/assets/banner/banner_1.jpg'),
+    src: require('@/assets/banner/banner_1.png'),
     alt: 'banner_1',
     key: 'banner_1',
     desc: '飞欧装饰，\n不止是装饰',
   },
   {
-    src: require('@/assets/banner/banner_2.jpg'),
+    src: require('@/assets/banner/banner_2.png'),
     alt: 'banner_2',
     key: 'banner_2',
     desc: '装的是品质，\n饰的是格调',
   },
   {
-    src: require('@/assets/banner/banner_3.jpg'),
+    src: require('@/assets/banner/banner_3.png'),
     alt: 'banner_3',
     key: 'banner_3',
     desc: '不求永恒，\n但求经典',
   },
   {
-    src: require('@/assets/banner/banner_4.jpg'),
+    src: require('@/assets/banner/banner_4.png'),
     alt: 'banner_4',
     key: 'banner_4',
     desc: '有限空间，\n无限可能',
   },
   {
-    src: require('@/assets/banner/banner_5.jpg'),
+    src: require('@/assets/banner/banner_5.png'),
     alt: 'banner_5',
     key: 'banner_5',
     desc: '美一个房子，\n美一个家',
   },
   {
-    src: require('@/assets/banner/banner_6.jpg'),
+    src: require('@/assets/banner/banner_6.png'),
     alt: 'banner_6',
     key: 'banner_6',
     desc: '简约风尚，\n由你所想',
   },
   {
-    src: require('@/assets/banner/banner_7.jpg'),
+    src: require('@/assets/banner/banner_7.png'),
     alt: 'banner_7',
     key: 'banner_7',
     desc: '这不是装修，\n这是艺术品',
