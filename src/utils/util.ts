@@ -11,12 +11,12 @@ export const debounceFun = debounce(
     fn && fn();
   },
   500,
-  { leading: true, trailing: false }
+  { leading: true, trailing: false },
 );
 
 export function initRem(
   isMinScreen: boolean,
-  setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>
+  setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>,
 ): void {
   // 4k适配
   const docEle = document.documentElement;
@@ -30,9 +30,9 @@ export function initRem(
         setIsMinScreen(false);
       }
       const fontSize = deviceWidth / 1920;
-      docEle.style.fontSize = 16 * Math.min(fontSize, 4) + 'px';
+      docEle.style.fontSize = `${16 * Math.min(fontSize, 4)}px`;
     } catch (error) {
-      console.error(error);
+      console.error(error); // eslint-disable-line no-console
     }
   }
   setHtmlFontSize();

@@ -1,6 +1,6 @@
-import logo from '@/assets/header/logo.svg'
-import logoMobile from '@/assets/header/logo_mobile.svg'
 import { useModel } from 'umi';
+import logo from '@/assets/header/logo.svg';
+import logoMobile from '@/assets/header/logo_mobile.svg';
 import styles from './index.less';
 
 export default function HomePage() {

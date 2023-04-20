@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 100px 30px 30px 45px;
+  height: 1300px;
   &-card {
     width: 230px;
     height: 300px;
@@ -15,6 +16,16 @@
       height: calc(100% - 13px);
       position: relative;
       border: 1px solid @green-color;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      :global {
+        .iconfont {
+          font-size: 60px;
+          color: @green-color;
+        }
+      }
       &::before,
       &::after {
         content: '';
