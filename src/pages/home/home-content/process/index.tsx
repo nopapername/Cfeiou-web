@@ -1,9 +1,16 @@
+import ScrollReveal from 'scrollreveal';
+import { useEffect, useRef } from 'react';
 import styles from './index.less';
 
 export default function ProcessContent() {
+  const processCardContainerRef = useRef(null);
+  useEffect(() => {
+    console.log(processCardContainerRef.current);
+  }, []);
+
   return (
     <div className={styles.container__process}>
-      <div className={styles.container__process__base}>
+      <div className={styles.container__process__base} ref={processCardContainerRef}>
         <div className={styles['container__process-card']}>
           <div className={styles['container__process-card__content']}>
             <div className={styles['container__process-card__content-header']}>
