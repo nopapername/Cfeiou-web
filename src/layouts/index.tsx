@@ -1,7 +1,7 @@
+import { initRem, setTitle } from '@/utils';
 import { useMount } from 'ahooks';
 import 'antd/dist/antd.less';
 import { Outlet, useModel } from 'umi';
-import { initRem, setTitle } from '@/utils';
 import Header from './header';
 import styles from './index.less';
 

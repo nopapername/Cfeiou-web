@@ -11,12 +11,12 @@ export const debounceFun = debounce(
     fn && fn();
   },
   500,
-  { leading: true, trailing: false },
+  { leading: true, trailing: false }
 );
 
 export function initRem(
   isMinScreen: boolean,
-  setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>
 ): void {
   // 4k适配
   const docEle = document.documentElement;

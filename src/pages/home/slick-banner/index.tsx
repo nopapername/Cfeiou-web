@@ -1,6 +1,6 @@
+import arrowBottom from '@/assets/banner/arrow_bottom.svg';
 import { Carousel } from 'antd';
 import { useModel } from 'umi';
-import arrowBottom from '@/assets/banner/arrow_bottom.svg';
 import styles from './index.less';
 
 const bannerList = [
