@@ -2,16 +2,32 @@ import ScrollReveal from 'scrollreveal';
 import { useEffect, useRef } from 'react';
 import styles from './index.less';
 
+const scrollRevealOption = {
+  reset: true,
+  origin: 'bottom',
+  duration: 1000,
+  delay: 80,
+  distance: '60px',
+};
+
 export default function ProcessContent() {
-  const processCardContainerRef = useRef(null);
+  const processCardContainerRef1 = useRef(null);
+  const processCardContainerRef2 = useRef(null);
+  const processCardContainerRef3 = useRef(null);
+  const processCardContainerRef4 = useRef(null);
+  const processCardContainerRef5 = useRef(null);
   useEffect(() => {
-    console.log(processCardContainerRef.current);
+    ScrollReveal().reveal(processCardContainerRef1.current || '', { ...scrollRevealOption, origin: 'bottom' });
+    ScrollReveal().reveal(processCardContainerRef2.current || '', { ...scrollRevealOption, origin: 'top' });
+    ScrollReveal().reveal(processCardContainerRef3.current || '', { ...scrollRevealOption, origin: 'bottom' });
+    ScrollReveal().reveal(processCardContainerRef4.current || '', { ...scrollRevealOption, origin: 'top' });
+    ScrollReveal().reveal(processCardContainerRef5.current || '', { ...scrollRevealOption, origin: 'bottom' });
   }, []);
 
   return (
     <div className={styles.container__process}>
-      <div className={styles.container__process__base} ref={processCardContainerRef}>
-        <div className={styles['container__process-card']}>
+      <div className={styles.container__process__base}>
+        <div className={styles['container__process-card']} ref={processCardContainerRef1}>
           <div className={styles['container__process-card__content']}>
             <div className={styles['container__process-card__content-header']}>
               <i className="iconfont icon-Chat" />
@@ -28,7 +44,7 @@ export default function ProcessContent() {
           </div>
         </div>
         <div className={styles['container__process-arrow']}><i className="iconfont icon-hand_right" /></div>
-        <div className={styles['container__process-card']}>
+        <div className={styles['container__process-card']} ref={processCardContainerRef2}>
           <div className={styles['container__process-card__content']}>
             <div className={styles['container__process-card__content-header']}>
               <i className="iconfont icon-shejiyishu" />
@@ -45,7 +61,7 @@ export default function ProcessContent() {
           </div>
         </div>
         <div className={styles['container__process-arrow']}><i className="iconfont icon-hand_right" /></div>
-        <div className={styles['container__process-card']}>
+        <div className={styles['container__process-card']} ref={processCardContainerRef3}>
           <div className={styles['container__process-card__content']}>
             <div className={styles['container__process-card__content-header']}>
               <i className="iconfont icon-shigongdi" />
@@ -60,7 +76,7 @@ export default function ProcessContent() {
           </div>
         </div>
         <div className={styles['container__process-arrow']}><i className="iconfont icon-hand_right" /></div>
-        <div className={styles['container__process-card']}>
+        <div className={styles['container__process-card']} ref={processCardContainerRef4}>
           <div className={styles['container__process-card__content']}>
             <div className={styles['container__process-card__content-header']}>
               <i className="iconfont icon-icf_folder_complete" />
@@ -75,7 +91,7 @@ export default function ProcessContent() {
           </div>
         </div>
         <div className={styles['container__process-arrow']}><i className="iconfont icon-hand_right" /></div>
-        <div className={styles['container__process-card']}>
+        <div className={styles['container__process-card']} ref={processCardContainerRef5}>
           <div className={styles['container__process-card__content']}>
             <div className={styles['container__process-card__content-header']}>
               <i className="iconfont icon-shouhou-2" />
@@ -91,6 +107,39 @@ export default function ProcessContent() {
           </div>
         </div>
       </div>
+      {/* <section className={styles.container__process__banner}>
+        <div className={styles['container__process__banner-wrap']}>
+          <img src={require('@/assets/process/process_banner.jpg')} alt="banner" />
+        </div>
+      </section> */}
+      <section className={styles.container__process__title}>
+        <div className={styles['container__process__title-symbol']}>
+          <i className="iconfont icon-shaniaologo" />
+          <div className={styles['container__process__title-symbol__text']}>
+            FEIOU
+          </div>
+        </div>
+        <div className={styles['container__process__title-theme']}>
+          <span className={styles['container__process__title-theme__text']}>
+            Life
+          </span>
+          <span className={styles['container__process__title-theme__text']}>
+            Natural
+          </span>
+          <span className={styles['container__process__title-theme__text']}>
+            Emotion
+          </span>
+          <span className={styles['container__process__title-theme__text']}>
+            Artistic
+          </span>
+          <span className={styles['container__process__title-theme__text']}>
+            Interest
+          </span>
+          <span className={styles['container__process__title-theme__text']}>
+            Simple
+          </span>
+        </div>
+      </section>
     </div>
   );
 }
