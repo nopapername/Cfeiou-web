@@ -11,12 +11,12 @@ export const debounceFun = debounce(
     fn && fn();
   },
   500,
-  { leading: true, trailing: false }
+  { leading: true, trailing: false },
 );
 
 export function initRem(
   isMinScreen: boolean,
-  setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>
+  setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>,
 ): void {
   // 4k适配
   const docEle = document.documentElement;
@@ -45,4 +45,55 @@ export const setTitle = (...args: string[]) => {
   setTimeout(() => {
     document.title = title;
   });
+};
+
+export const smoothScroll = (targetPosition: number, duration?: number): void => {
+  // 检查浏览器是否支持 scrollBehavior 属性
+  if ('scrollBehavior' in document.documentElement.style) {
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth',
+    });
+    return;
+  }
+
+  // 兼容旧版本浏览器
+  const startingY = window.pageYOffset;
+  const diff = targetPosition - startingY;
+  duration = duration || 500;
+
+  const easing = (t: number): number => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+
+  const perFrameDistance = (diff / duration) * 16;
+  let requestId: number | null;
+  let animationStartTime: DOMHighResTimeStamp | null = null;
+
+  const step: FrameRequestCallback = (timestamp: DOMHighResTimeStamp) => {
+    if (!animationStartTime) {
+      animationStartTime = timestamp;
+    }
+    const timeElapsed = timestamp - animationStartTime;
+    const percent = easing(timeElapsed / duration);
+
+    window.scrollBy(0, perFrameDistance * percent);
+
+    if (timeElapsed < duration) {
+      requestId = window.requestAnimationFrame(step);
+    }
+  };
+
+  requestId = window.requestAnimationFrame(step);
+
+  const cancelScroll: (event: Event) => void = () => {
+    if (requestId) {
+      window.cancelAnimationFrame(requestId);
+      requestId = null;
+    }
+  };
+
+  window.addEventListener('mousedown', cancelScroll, { passive: true });
+  window.addEventListener('wheel', cancelScroll, { passive: true });
+  window.addEventListener('touchstart', cancelScroll, { passive: true });
+  window.addEventListener('keydown', cancelScroll, { passive: true });
+  window.addEventListener('resize', cancelScroll, { passive: true });
 };

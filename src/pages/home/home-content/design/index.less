@@ -1,0 +1,154 @@
+.container__design {
+  position: relative;
+  padding: 80px 50px 0 50px;
+  @media screen and (max-width: 800px) {
+    padding: 80px 50px 0 50px;
+  }
+  display: flex;
+  &__left {
+    width: 75%;
+    display: flex;
+    position: relative;
+    flex-flow: row wrap;
+    flex: 1 100%;
+    margin-top: -30px;
+    margin-bottom: 60px;
+    padding-right: 12.5px;
+    @media screen and (max-width: 1150px) {
+      width: 100%;
+    }
+    &-gallery {
+      width: 33.333%;
+      float: left;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      font-family: 'MaisonNueu';
+      color: #333;
+      padding-right: 15px;
+      margin-bottom: 60px;
+      &:nth-child(1),
+      &:nth-child(2) {
+        width: 50%;
+      }
+      @media screen and (max-width: 500px) {
+        display: block;
+        float: none;
+        width: 100%;
+        &:nth-child(1),
+        &:nth-child(2) {
+          width: 100%;
+        }
+        &:nth-child(5),
+        &:nth-child(6) {
+          width: 50%;
+        }
+      }
+      &__img1 {
+        background-image: url(~@/assets/design/design_case1_1.jpg);
+        transition: background-image 0.5s ease-in-out;
+        &:hover {
+          background-image: url(~@/assets/design/design_case1_2.jpg);
+          transition: background-image 0.5s ease-in-out;
+        }
+      }
+      &__img2 {
+        background-image: url(~@/assets/design/design_case2_1.jpg);
+        transition: background-image 0.5s ease-in-out;
+        &:hover {
+          background-image: url(~@/assets/design/design_case2_2.jpg);
+          transition: background-image 0.5s ease-in-out;
+        }
+      }
+      &__img3 {
+        background-image: url(~@/assets/design/design_case4_1.jpg);
+        transition: background-image 0.5s ease-in-out;
+        &:hover {
+          background-image: url(~@/assets/design/design_case4_2.jpg);
+          transition: background-image 0.5s ease-in-out;
+        }
+      }
+      &__img4 {
+        background-image: url(~@/assets/design/design_case5_1.jpg);
+        transition: background-image 0.5s ease-in-out;
+        &:hover {
+          background-image: url(~@/assets/design/design_case5_2.jpg);
+          transition: background-image 0.5s ease-in-out;
+        }
+      }
+      &__img5 {
+        background-image: url(~@/assets/design/design_case6_1.jpg);
+        transition: background-image 0.5s ease-in-out;
+        &:hover {
+          background-image: url(~@/assets/design/design_case6_2.jpg);
+          transition: background-image 0.5s ease-in-out;
+        }
+      }
+      &__img {
+        padding: 50%;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+      }
+      &__desc {
+        font-family: cursive;
+        margin-top: 12px;
+        div:nth-child(2) {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  &__right {
+    width: 25%;
+    transform: translateY(-25px);
+    @media screen and (max-width: 1150px) {
+      display: none;
+    }
+    &-gallery {
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      color: #333;
+      &__img6 {
+        background-image: url(~@/assets/design/design_case3_1.jpg);
+        transition: background-image 0.5s ease-in-out;
+        &:hover {
+          background-image: url(~@/assets/design/design_case3_2.jpg);
+          transition: background-image 0.5s ease-in-out;
+        }
+      }
+      &__img7 {
+        background-image: url(~@/assets/design/design_case7_1.jpg);
+        transition: background-image 0.5s ease-in-out;
+        &:hover {
+          background-image: url(~@/assets/design/design_case7_2.jpg);
+          transition: background-image 0.5s ease-in-out;
+        }
+      }
+      &__img8 {
+        background-image: url(~@/assets/design/design_case8_1.jpg);
+        transition: background-image 0.5s ease-in-out;
+        &:hover {
+          background-image: url(~@/assets/design/design_case8_2.jpg);
+          transition: background-image 0.5s ease-in-out;
+        }
+      }
+      &__img {
+        padding: 50%;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+      }
+      &__desc {
+        font-family: cursive;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        div:nth-child(2) {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
