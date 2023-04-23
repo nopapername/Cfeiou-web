@@ -1,4 +1,4 @@
-import { useMount } from 'ahooks';
+import { useMount, useUnmount } from 'ahooks';
 import 'antd/dist/antd.less';
 import { Outlet, useModel } from 'umi';
 import ScrollReveal from 'scrollreveal';
@@ -10,7 +10,7 @@ export const scrollRevealOption = {
   reset: true,
   origin: 'bottom',
   duration: 800,
-  delay: 60,
+  delay: 100,
   distance: '60px',
 };
 
@@ -22,6 +22,10 @@ export default function Layout() {
     initRem(isMinScreen, setIsMinScreen);
     setTitle('四川飞欧装饰工程有限公司');
     ScrollReveal().reveal('.scroll-reveal-animation', { ...scrollRevealOption, origin: 'bottom' });
+  });
+
+  useUnmount(() => {
+    ScrollReveal().destroy();
   });
 
   return (
