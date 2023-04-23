@@ -2,7 +2,7 @@ import { Carousel } from 'antd';
 import { useModel } from 'umi';
 import arrowBottom from '@/assets/banner/arrow_bottom.svg';
 import styles from './index.less';
-import { smoothScroll } from '@/utils/util';
+import { scrollToElementById, smoothScroll } from '@/utils/util';
 
 const bannerList = [
   {
@@ -78,7 +78,7 @@ export default function SlickBanner() {
                 <div className={styles.home_carousel__cover}>
                   <div
                     className={styles.home_carousel__scroll}
-                    onClick={() => smoothScroll(2000, 1000)}
+                    onClick={() => scrollToElementById('design_with_us')}
                   >
                     <div className={styles['home_carousel__scroll-arrow']}>
                       <img src={arrowBottom} alt="arrow" />

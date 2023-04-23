@@ -1,0 +1,41 @@
+.contact-modal {
+  &__phone {
+    margin: 12px 0;
+    div {
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+  &__error {
+    color: red;
+    font-size: 12px;
+  }
+  &__desc {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    div {
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+  &__vx {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-weight: 600;
+    }
+    img {
+      margin-top: 12px;
+      width: 150PX;
+    }
+  }
+  :global {
+    .ant-modal-footer {
+      .ant-btn:first-child {
+        display: none;
+      }
+    }
+  }
+}

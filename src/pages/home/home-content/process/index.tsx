@@ -85,7 +85,7 @@ export default function ProcessContent() {
           </div>
         </div>
       </div>
-      <section className={styles.container__process__title}>
+      <section className={styles.container__process__title} id="design_with_us">
         <div className={classnames(styles['container__process__title-symbol'], 'scroll-reveal-animation')}>
           <i className="iconfont icon-shaniaologo" />
           <div className={styles['container__process__title-symbol__text']}>

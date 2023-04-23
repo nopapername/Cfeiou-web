@@ -1,13 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable max-len */
 import classnames from 'classnames';
+import { Popover } from 'antd';
+import { useModel } from 'umi';
 import styles from './index.less';
 
 export default function HomeFooter() {
+  const { isMinScreen } = useModel('usePublicState');
+
   return (
     <div className={styles['home-footer']}>
       <div className={styles['home-footer__bg']} />
-      <div className={styles['home-footer__intro']}>
+      <div className={styles['home-footer__intro']} id="introduce_with_us">
         <div className={styles['home-footer__intro-left']}>
           <img src={require('@/assets/footer/introduce_banner.jpg')} alt="intro_banner" />
         </div>
@@ -39,7 +43,7 @@ export default function HomeFooter() {
         <div className="scroll-reveal-animation">: 大装修公司运营成本太高，对于业主来说，装修的隐形成本就会增加许多。</div>
         <div className="scroll-reveal-animation">&nbsp;&nbsp;小装修公司一没有高昂的房租费，二没有那么多的人员开销，就性价比来说是很好的选择，且全程是设计师一对一的服务，相当于“私人订制”，回馈率高。</div>
       </div>
-      <div className={styles['home-footer__info']}>
+      <div className={styles['home-footer__info']} id="contact_with_us">
         <div className={styles['home-footer__info__desc']}>
           <div>MIAN YANG 绵阳 / CHENG DU 成都</div>
           <div>四川飞欧装饰工程有限公司</div>
@@ -54,13 +58,20 @@ export default function HomeFooter() {
             <span>FOLLOW US</span>
           </div>
           <div className={styles['home-footer__info__follow-content']}>
-            <div className={styles['home-footer__info__follow-content__account']}><img src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" /><span>咨询了解</span></div>
+            <Popover placement="top" content={<img width="100" src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
+              <div className={styles['home-footer__info__follow-content__account']}>
+                <img src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />
+                <span>咨询了解</span>
+              </div>
+            </Popover>
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
             <div className={styles['home-footer__info__follow-content__account']}><img src={require('@/assets/footer/xiaohongshu_logo.png')} alt="contact_us" /><span>官方小红书</span></div>
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
             <div className={styles['home-footer__info__follow-content__account']}><img src={require('@/assets/footer/douyin_logo.png')} alt="contact_us" /><span>官方抖音</span></div>
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
-            <div className={styles['home-footer__info__follow-content__account']}><img src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" /><span>商务合作</span></div>
+            <Popover placement="top" content={<img width="100" src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
+              <div className={styles['home-footer__info__follow-content__account']}><img src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" /><span>商务合作</span></div>
+            </Popover>
           </div>
         </div>
       </div>

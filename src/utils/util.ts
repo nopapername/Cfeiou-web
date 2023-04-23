@@ -97,3 +97,12 @@ export const smoothScroll = (targetPosition: number, duration?: number): void =>
   window.addEventListener('keydown', cancelScroll, { passive: true });
   window.addEventListener('resize', cancelScroll, { passive: true });
 };
+
+export function scrollToElementById(id: string, duration = 500): void {
+  const targetElement = document.getElementById(id);
+  if (!targetElement) {
+    return;
+  }
+  const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+  smoothScroll(targetPosition, duration);
+}
