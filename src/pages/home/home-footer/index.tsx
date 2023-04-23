@@ -58,7 +58,7 @@ export default function HomeFooter() {
             <span>FOLLOW US</span>
           </div>
           <div className={styles['home-footer__info__follow-content']}>
-            <Popover placement="top" content={<img width="100" src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
+            <Popover placement="top" content={<img width="150" src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
               <div className={styles['home-footer__info__follow-content__account']}>
                 <img src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />
                 <span>咨询了解</span>
@@ -69,7 +69,7 @@ export default function HomeFooter() {
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
             <div className={styles['home-footer__info__follow-content__account']}><img src={require('@/assets/footer/douyin_logo.png')} alt="contact_us" /><span>官方抖音</span></div>
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
-            <Popover placement="top" content={<img width="100" src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
+            <Popover placement="top" content={<img width="150" src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
               <div className={styles['home-footer__info__follow-content__account']}><img src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" /><span>商务合作</span></div>
             </Popover>
           </div>

@@ -75,7 +75,7 @@ export default function ContactModal({
       )}
       <div className={styles['contact-modal__desc']}>
         <div> 一些期望或意见<span>（可不填）</span>：</div>
-        <TextArea placeholder="可填写自己的装修意愿、风格、楼盘、地址或者联系方式（如微信号）" allowClear onChange={handleDescChange} />
+        <TextArea placeholder="可填写自己的装修意愿、风格、楼盘、地址或者联系方式（如微信号）" allowClear onChange={handleDescChange} autoSize={{ minRows: 3, maxRows: 6 }} />
       </div>
       <div className={styles['contact-modal__vx']}>
         <span>或者直接联系我们（官方微信号）：</span>
