@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Modal, Input } from 'antd';
 import styles from './index.less';
+import { sendEmail } from '@/api';
 
 const { TextArea } = Input;
 
@@ -20,8 +21,7 @@ export default function ContactModal({
 
   const handleOk = () => {
     if (!phone || phoneError) return;
-    console.log(phone);
-    console.log(desc);
+    sendEmail(phone, desc);
     onOk && onOk();
   };
 
