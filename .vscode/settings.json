@@ -1,12 +1,12 @@
 {
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "eslint.options": {
     "extensions": [".js", ".vue", ".jsx", ".tsx"]
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll": false
+    "source.fixAll": true
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
