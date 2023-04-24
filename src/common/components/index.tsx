@@ -6,7 +6,7 @@ import { sendEmail } from '@/api';
 const { TextArea } = Input;
 
 export default function ContactModal({
-  modalVisible = false, onOk = () => {}, onCancel = () => {}, ...restProps
+  modalVisible = false, onOk = () => { }, onCancel = () => { }, ...restProps
 }) {
   const [phone, setPhone] = useState('');
   const [desc, setDesc] = useState('');
@@ -19,10 +19,10 @@ export default function ContactModal({
     }
   }, [modalVisible]);
 
-  const handleOk = () => {
+  const handleOk = async () => {
     if (!phone || phoneError) return;
-    sendEmail(phone, desc);
-    onOk && onOk();
+    const isSuccess = await sendEmail(phone, desc);
+    if (isSuccess) onOk && onOk();
   };
 
   const handleCancel = () => {

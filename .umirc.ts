@@ -21,4 +21,12 @@ export default {
       hack: 'true; @import "@/common/css/global.less";',
     },
   },
+  // 其他配置选项
+  proxy: {
+    '/api': {
+      target: 'http://localhost:3001',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
+  },
 };
