@@ -7,6 +7,7 @@ body {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  visibility: visible;
   z-index: 0;
   &__content {
     width: 100%;
@@ -16,4 +17,9 @@ body {
   .scroll-reveal-animation {
     visibility: hidden;
   }
+}
+.hide {
+  transform: translateY(-100vh) !important;
+  visibility: hidden !important;
+  transition: all 0.5s ease-out !important;
 }

@@ -2,9 +2,12 @@ import { useMount, useUnmount } from 'ahooks';
 import 'antd/dist/antd.less';
 import { Outlet, useModel } from 'umi';
 import ScrollReveal from 'scrollreveal';
+import { useEffect, useState } from 'react';
+import classnames from 'classnames';
 import { initRem, setTitle } from '@/utils';
 import Header from './header';
 import styles from './index.less';
+import LoadingPage from './loading-page';
 
 export const scrollRevealOption = {
   reset: true,
@@ -16,24 +19,39 @@ export const scrollRevealOption = {
 
 export default function Layout() {
   const { isMinScreen, setIsMinScreen } = useModel('usePublicState');
+  const [loading, setLoading] = useState(true);
 
   useMount(() => {
     // 4k
     initRem(isMinScreen, setIsMinScreen);
     setTitle('四川飞欧装饰工程有限公司');
-    ScrollReveal().reveal('.scroll-reveal-animation', { ...scrollRevealOption, origin: 'bottom' });
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
   });
+
+  useEffect(() => {
+    if (!loading) {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        ScrollReveal().reveal('.scroll-reveal-animation', { ...scrollRevealOption, origin: 'bottom' });
+      }, 50);
+    }
+  }, [loading]);
 
   useUnmount(() => {
     ScrollReveal().destroy();
   });
 
   return (
-    <section className={styles.layout}>
-      <Header />
-      <div className={styles.layout__content}>
-        <Outlet />
-      </div>
-    </section>
+    <>
+      <LoadingPage className={classnames(styles.layout, !loading && styles.hide)} />
+      <section className={classnames(styles.layout)}>
+        <Header />
+        <div className={styles.layout__content}>
+          <Outlet />
+        </div>
+      </section>
+    </>
   );
 }
