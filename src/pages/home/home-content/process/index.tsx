@@ -136,7 +136,7 @@ export default function ProcessContent() {
           </div>
           <div className={styles['container__process__title-theme__text']}>
             <span className={styles['container__process__title-theme__chinese']}>
-              简单
+              简约
             </span>
             <span className={styles['container__process__title-theme__english']}>
               Simple
