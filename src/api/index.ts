@@ -4,7 +4,7 @@ import axios from 'axios';
 // 定义发送邮件接口函数
 export const sendEmail = async (phone: string, description: string) => {
   try {
-    const response = await axios.post('http://localhost:3001/send-email', {
+    const response = await axios.post('http://localhost:3001/api/send-email', {
       phone,
       description,
     });
