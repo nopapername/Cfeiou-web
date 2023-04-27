@@ -1,8 +1,9 @@
 import { Carousel } from 'antd';
 import { useModel } from 'umi';
+import { useEffect, useRef } from 'react';
 import arrowBottom from '@/assets/banner/arrow_bottom.svg';
 import styles from './index.less';
-import { scrollToElementById, smoothScroll } from '@/utils/util';
+import { scrollToElementById } from '@/utils/util';
 
 const bannerList = [
   {
@@ -50,7 +51,28 @@ const bannerList = [
 ];
 
 export default function SlickBanner() {
-  const { isMinScreen } = useModel('usePublicState');
+  const { isMinScreen, setLoading } = useModel('usePublicState');
+  const loadedImgCount = useRef(0);
+  const isOverLoadingTime = useRef(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (loadedImgCount.current < 3) {
+        isOverLoadingTime.current = true;
+      } else setLoading(false);
+    }, 2500);
+    bannerList.map((item) => new Promise((resolve) => {
+      const img = new Image();
+      img.src = item.src;
+      img.onload = () => {
+        loadedImgCount.current += 1;
+        if (loadedImgCount.current === 3 && isOverLoadingTime.current) {
+          setLoading(false);
+        }
+        resolve(true);
+      };
+    }));
+  }, [setLoading]);
 
   return (
     <div className={styles.home_carousel}>
@@ -58,13 +80,17 @@ export default function SlickBanner() {
         effect="fade"
         dots={isMinScreen ? false : { className: styles.home_carousel__dots }}
         autoplay
-        autoplaySpeed={3000}
+        autoplaySpeed={5000}
         infinite
         pauseOnHover={false}
       >
         {bannerList.map((item) => (
           <div className={styles.home_carousel__banner} key={item.key}>
-            <img src={item.src} alt={item.alt} draggable="false" />
+            <img
+              src={item.src}
+              alt={item.alt}
+              draggable="false"
+            />
             {/* <div
               className={classnames(
                 styles.home_carousel__text,
