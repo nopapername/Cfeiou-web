@@ -71,7 +71,7 @@ export default function SlickBanner() {
         loadedImgCount.current += 1;
         if (loadedImgCount.current === 2 && isOverLoadingTime.current) {
           setLoading(false);
-          carouselRef.current?.goTo(6);
+          carouselRef.current?.goTo(0);
         }
         resolve(true);
       };
