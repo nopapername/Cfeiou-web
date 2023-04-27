@@ -1,6 +1,7 @@
 import { Carousel } from 'antd';
 import { useModel } from 'umi';
 import { useEffect, useRef } from 'react';
+import { CarouselRef } from 'antd/lib/carousel';
 import arrowBottom from '@/assets/banner/arrow_bottom.svg';
 import styles from './index.less';
 import { scrollToElementById } from '@/utils/util';
@@ -54,20 +55,23 @@ export default function SlickBanner() {
   const { isMinScreen, setLoading } = useModel('usePublicState');
   const loadedImgCount = useRef(0);
   const isOverLoadingTime = useRef(false);
+  const carouselRef = useRef<CarouselRef>(null);
 
   useEffect(() => {
     setTimeout(() => {
-      if (loadedImgCount.current < 3) {
+      if (loadedImgCount.current < 2) {
         isOverLoadingTime.current = true;
       } else setLoading(false);
+      carouselRef.current?.goTo(0);
     }, 2500);
     bannerList.map((item) => new Promise((resolve) => {
       const img = new Image();
       img.src = item.src;
       img.onload = () => {
         loadedImgCount.current += 1;
-        if (loadedImgCount.current === 3 && isOverLoadingTime.current) {
+        if (loadedImgCount.current === 2 && isOverLoadingTime.current) {
           setLoading(false);
+          carouselRef.current?.goTo(6);
         }
         resolve(true);
       };
@@ -78,6 +82,7 @@ export default function SlickBanner() {
     <div className={styles.home_carousel}>
       <Carousel
         effect="fade"
+        ref={carouselRef}
         dots={isMinScreen ? false : { className: styles.home_carousel__dots }}
         autoplay
         autoplaySpeed={5000}
