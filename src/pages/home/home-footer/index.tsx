@@ -13,7 +13,7 @@ export default function HomeFooter() {
       <div className={styles['home-footer__bg']} />
       <div className={styles['home-footer__intro']} id="introduce_with_us">
         <div className={styles['home-footer__intro-left']}>
-          <img src={require('@/assets/footer/introduce_banner.jpg')} alt="intro_banner" />
+          <img src="http://cdn.cfeiou.cn/cfeiou-web-image/introduce_banner.jpg" alt="intro_banner" />
         </div>
         <div className={styles['home-footer__intro-right']}>
           <div className={classnames(styles['home-footer__intro-right__title'], 'scroll-reveal-animation')}>
