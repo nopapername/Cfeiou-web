@@ -11,12 +11,12 @@ export const debounceFun = debounce(
     fn && fn();
   },
   500,
-  { leading: true, trailing: false },
+  { leading: true, trailing: false }
 );
 
 export function initRem(
   isMinScreen: boolean,
-  setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsMinScreen: React.Dispatch<React.SetStateAction<boolean>>
 ): void {
   // 4k适配
   const docEle = document.documentElement;
@@ -47,7 +47,10 @@ export const setTitle = (...args: string[]) => {
   });
 };
 
-export const smoothScroll = (targetPosition: number, duration?: number): void => {
+export const smoothScroll = (
+  targetPosition: number,
+  duration?: number
+): void => {
   // 检查浏览器是否支持 scrollBehavior 属性
   if ('scrollBehavior' in document.documentElement.style) {
     window.scrollTo({
@@ -62,7 +65,8 @@ export const smoothScroll = (targetPosition: number, duration?: number): void =>
   const diff = targetPosition - startingY;
   duration = duration || 500;
 
-  const easing = (t: number): number => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+  const easing = (t: number): number =>
+    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
   const perFrameDistance = (diff / duration) * 16;
   let requestId: number | null;
@@ -98,11 +102,16 @@ export const smoothScroll = (targetPosition: number, duration?: number): void =>
   window.addEventListener('resize', cancelScroll, { passive: true });
 };
 
-export function scrollToElementById(id: string, duration = 500): void {
+export function scrollToElementById(
+  id: string,
+  duration = 500,
+  offset = 0
+): void {
   const targetElement = document.getElementById(id);
   if (!targetElement) {
     return;
   }
-  const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+  const targetPosition =
+    targetElement.getBoundingClientRect().top + window.pageYOffset + offset;
   smoothScroll(targetPosition, duration);
 }

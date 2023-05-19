@@ -63,7 +63,7 @@ export default function SlickBanner() {
         isOverLoadingTime.current = true;
       } else setLoading(false);
       carouselRef.current?.goTo(0);
-    }, 2500);
+    }, 2000);
     bannerList.map((item) => new Promise((resolve) => {
       const img = new Image();
       img.src = item.src;
@@ -109,7 +109,7 @@ export default function SlickBanner() {
                 <div className={styles.home_carousel__cover}>
                   <div
                     className={styles.home_carousel__scroll}
-                    onClick={() => scrollToElementById('design_with_us')}
+                    onClick={() => scrollToElementById('container_process_content', 500, -200)}
                   >
                     <div className={styles['home_carousel__scroll-arrow']}>
                       <img src={arrowBottom} alt="arrow" />

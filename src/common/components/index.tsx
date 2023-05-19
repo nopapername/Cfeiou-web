@@ -79,7 +79,7 @@ export default function ContactModal({
       </div>
       <div className={styles['contact-modal__vx']}>
         <span>或者直接联系我们（官方微信号）：</span>
-        <img src={require('@/assets/footer/contact_us.jpg')} alt="contact_us" />
+        <img src="http://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" />
       </div>
     </Modal>
   );

@@ -3,7 +3,7 @@ import styles from './index.less';
 
 export default function ProcessContent() {
   return (
-    <div className={styles.container__process}>
+    <div className={styles.container__process} id="container_process_content">
       <div className={classnames(styles.container__process__base, 'scroll-reveal-animation')}>
         <div className={styles['container__process-card']}>
           <div className={styles['container__process-card__content']}>
@@ -49,6 +49,8 @@ export default function ProcessContent() {
               <ul>
                 <li><i className="iconfont icon-yuyinjiantou" />签订合同</li>
                 <li><i className="iconfont icon-yuyinjiantou" />节点交底</li>
+                <li><i className="iconfont icon-yuyinjiantou" />隐蔽验收</li>
+                <li><i className="iconfont icon-yuyinjiantou" />完工自检</li>
               </ul>
             </div>
           </div>
@@ -62,8 +64,9 @@ export default function ProcessContent() {
             </div>
             <div className={styles['container__process-card__content-body']}>
               <ul>
+                <li><i className="iconfont icon-yuyinjiantou" />完工初验</li>
                 <li><i className="iconfont icon-yuyinjiantou" />竣工验收</li>
-                <li><i className="iconfont icon-yuyinjiantou" />完工仪式</li>
+                <li><i className="iconfont icon-yuyinjiantou" />交付使用</li>
               </ul>
             </div>
           </div>
