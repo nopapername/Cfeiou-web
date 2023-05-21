@@ -36,7 +36,7 @@ export default function OperationCom() {
         <span>即刻装修</span>
       </a>
       <ContactModal
-        visible={modalVisible}
+        open={modalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
       />

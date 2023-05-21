@@ -25,7 +25,7 @@ export default function Layout() {
   useMount(() => {
     // 4k
     initRem(isMinScreen, setIsMinScreen);
-    setTitle('四川飞欧装饰工程有限公司');
+    setTitle('绵阳', '川飞欧装饰', '装修');
   });
 
   useEffect(() => {
@@ -42,14 +42,11 @@ export default function Layout() {
   });
 
   return (
-    <>
+    <section className={classnames(styles.layout)}>
       <LoadingPage className={classnames(styles.layout, !loading && styles.hide)} />
-      <section className={classnames(styles.layout)}>
-        <Header />
-        <div className={styles.layout__content}>
-          <Outlet />
-        </div>
-      </section>
-    </>
+      <div className={styles.layout__content}>
+        <Header /><Outlet />
+      </div>
+    </section>
   );
 }

@@ -52,7 +52,7 @@ export default function HomeFooter() {
           <div>联系电话: 13990166737<span>（微信同号）</span></div>
           <br />
           <div>*可承接绵阳、成都及周边城市、县、乡、镇等装修设计项目，欢迎随时咨询!</div>
-          <div>© 2021-2023 四川飞欧装饰工程有限公司 cfeiou.cn 版权所有 备案号：蜀ICP备2023010984号</div>
+          <div>© 2021-2023 四川飞欧装饰工程有限公司 cfeiou.cn 版权所有 备案号：蜀ICP备2023010984号-1</div>
         </div>
         <div className={styles['home-footer__info__follow']}>
           <div className={styles['home-footer__info__follow-header']}>

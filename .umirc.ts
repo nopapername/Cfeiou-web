@@ -2,10 +2,10 @@ import pxtorem from 'postcss-pxtorem';
 
 export default {
   npmClient: 'yarn',
+  hash: true,
   routes: [
-    { path: '/', redirect: '/home' },
-    { path: '/home', component: '@/pages/home' },
-    { path: '/tamplate', component: '@/pages/tamplate' },
+    { path: '/', component: '@/pages/home' },
+    { path: '/*', component: '@/pages/404' },
   ],
   extraPostCSSPlugins: [
     pxtorem({
@@ -13,6 +13,7 @@ export default {
       propList: ['*'],
     }),
   ],
+  links: [{ rel: 'icon', href: '/favicon.ico' }],
   tailwindcss: {},
   plugins: ['@umijs/plugins/dist/tailwindcss', '@umijs/plugins/dist/model'],
   model: {},

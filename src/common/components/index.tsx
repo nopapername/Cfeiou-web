@@ -49,7 +49,7 @@ export default function ContactModal({
 
   return (
     <Modal
-      visible={modalVisible}
+      open={modalVisible}
       onOk={handleOk}
       centered
       mask={false}
@@ -78,7 +78,7 @@ export default function ContactModal({
         <TextArea placeholder="可填写自己的装修意愿、风格、楼盘、地址或者联系方式（如微信号）" allowClear onChange={handleDescChange} autoSize={{ minRows: 3, maxRows: 6 }} />
       </div>
       <div className={styles['contact-modal__vx']}>
-        <span>或者直接联系我们（官方微信号）：</span>
+        <span>或者直接联系我们（官方微信号），并请注明来意~</span>
         <img src="http://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" />
       </div>
     </Modal>

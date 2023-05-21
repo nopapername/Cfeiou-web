@@ -21,7 +21,7 @@ export default function HomePage() {
             no-script-url
         */}
         <a href="javascript:void(0)" onClick={() => scrollToElementById('design_with_us')} className={styles['header__menu-item']}>
-          川飞欧
+          {isMinScreen ? '川飞欧' : '川飞欧装修'}
         </a>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,
             react/jsx-no-script-url,
