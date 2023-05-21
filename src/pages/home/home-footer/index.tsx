@@ -69,7 +69,7 @@ export default function HomeFooter() {
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
             <div className={styles['home-footer__info__follow-content__account']} onClick={() => window.open('https://www.xiaohongshu.com/user/profile/63f30169000000000f012303')}><img src={require('@/assets/footer/xiaohongshu_logo.png')} alt="contact_us" /><span>官方小红书</span></div>
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
-            <Popover placement="top" content={<div><img width="500" src="http://cdn.cfeiou.cn/cfeiou-web-image/douyin_contact.jpg" alt="contact_douyin" /></div>} trigger={isMinScreen ? 'click' : 'hover'}>
+            <Popover placement="top" content={<div><img width="280" src="http://cdn.cfeiou.cn/cfeiou-web-image/douyin_contact.jpg" alt="contact_douyin" /></div>} trigger={isMinScreen ? 'click' : 'hover'}>
               <div className={styles['home-footer__info__follow-content__account']}>
                 <img src={require('@/assets/footer/douyin_logo.png')} alt="contact_us" /><span>官方抖音</span>
               </div>
