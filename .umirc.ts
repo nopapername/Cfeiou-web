@@ -2,9 +2,11 @@ import pxtorem from 'postcss-pxtorem';
 
 export default {
   npmClient: 'yarn',
+  history: { type: 'hash' },
   hash: true,
   routes: [
-    { path: '/', component: '@/pages/home' },
+    { path: '/', redirect: '/home' },
+    { path: '/home', component: '@/pages/home' },
     { path: '/*', component: '@/pages/404' },
   ],
   extraPostCSSPlugins: [
