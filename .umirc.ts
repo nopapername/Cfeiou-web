@@ -32,4 +32,5 @@ export default {
       pathRewrite: { '^/api': '' },
     },
   },
+  headScripts: ['/tongji.js'],
 };
