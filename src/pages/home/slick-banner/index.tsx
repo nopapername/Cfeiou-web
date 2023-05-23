@@ -109,7 +109,10 @@ export default function SlickBanner() {
                 <div className={styles.home_carousel__cover}>
                   <div
                     className={styles.home_carousel__scroll}
-                    onClick={() => scrollToElementById('container_process_content', 500, -200)}
+                    onClick={() => {
+                      _hmt.push(['_trackEvent', 'banner滑动按钮', '点击', '滚动到流程']);
+                      scrollToElementById('container_process_content', 500, -200);
+                    }}
                   >
                     <div className={styles['home_carousel__scroll-arrow']}>
                       <img src={arrowBottom} alt="arrow" />

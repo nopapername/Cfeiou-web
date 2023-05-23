@@ -20,6 +20,7 @@ export default function ContactModal({
   }, [modalVisible]);
 
   const handleOk = async () => {
+    _hmt.push(['_trackEvent', '即刻装修弹窗确定按钮', '点击', `phone:${phone}, desc:${desc}`]);
     if (!phone || phoneError) return;
     const isSuccess = await sendEmail(phone, desc);
     if (isSuccess) onOk && onOk();
