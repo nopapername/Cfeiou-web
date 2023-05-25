@@ -28,7 +28,7 @@ export default function Layout() {
   const is404 = useMemo(() => location.pathname.includes('/404'), [location]);
 
   useMount(() => {
-    setTitle('绵阳装修', '绵阳装修工作室', '川飞欧装饰', '四川飞欧装饰工程有限公司');
+    setTitle('绵阳装修公司', '绵阳装修工作室', '川飞欧装饰', '四川飞欧装饰工程有限公司');
     // 4k
     initRem(isMinScreen, setIsMinScreen);
   });
@@ -50,7 +50,7 @@ export default function Layout() {
     <>
       <Helmet>
         <meta name="keywords" content="绵阳装修, 绵阳装修公司，绵阳本土装修公司，绵阳商业装修，川飞欧装饰" />
-        <meta name="description" content="绵阳本地装修找川飞欧，在2021年，川飞欧成立于四川绵阳，旨在为客户提供合理的设计方案创造高品质商业或居住空间。川飞欧，与你一起构建「更美好的生活」。" />
+        <meta name="description" content="绵阳装修公司找川飞欧装饰，在2021年，川飞欧成立于四川绵阳，旨在为客户提供合理的设计方案创造高品质商业或居住空间。川飞欧，与你一起构建「更美好的生活」。" />
         <meta name="description" content="川飞欧公司董事长在成立川飞欧之前，是一家当地大型装修公司的副总经理、总项目经理及股东，从事装修行业近20余年。" />
         <meta name="location" content="province=四川;city=绵阳;coord=104.791281,31.41705" />
         <link rel="canonical" href="https://cfeiou.cn" />
