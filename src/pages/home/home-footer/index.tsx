@@ -13,7 +13,7 @@ export default function HomeFooter() {
       <div className={styles['home-footer__bg']} />
       <div className={styles['home-footer__intro']} id="introduce_with_us">
         <div className={styles['home-footer__intro-left']}>
-          <img src="http://cdn.cfeiou.cn/cfeiou-web-image/cfeiou_company1.jpg" alt="intro_banner" />
+          <img src="https://cdn.cfeiou.cn/cfeiou-web-image/cfeiou_company1.jpg" alt="intro_banner" />
         </div>
         <div className={styles['home-footer__intro-right']}>
           <div className={classnames(styles['home-footer__intro-right__title'], 'scroll-reveal-animation')}>
@@ -60,9 +60,9 @@ export default function HomeFooter() {
             <span>FOLLOW US</span>
           </div>
           <div className={styles['home-footer__info__follow-content']}>
-            <Popover placement="top" content={<img width="150" src="http://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
+            <Popover placement="top" content={<img width="150" src="https://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
               <div className={styles['home-footer__info__follow-content__account']} onClick={() => _hmt.push(['_trackEvent', 'footer按钮', '点击', '咨询了解'])}>
-                <img src="http://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" />
+                <img src="https://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" />
                 <span>咨询了解</span>
               </div>
             </Popover>
@@ -76,14 +76,14 @@ export default function HomeFooter() {
             ><img src={require('@/assets/footer/xiaohongshu_logo.png')} alt="contact_us" /><span>官方小红书</span>
             </div>
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
-            <Popover placement="top" content={<div><img width="280" src="http://cdn.cfeiou.cn/cfeiou-web-image/douyin_contact.jpg" alt="contact_douyin" /></div>} trigger={isMinScreen ? 'click' : 'hover'}>
+            <Popover placement="top" content={<div><img width="280" src="https://cdn.cfeiou.cn/cfeiou-web-image/douyin_contact.jpg" alt="contact_douyin" /></div>} trigger={isMinScreen ? 'click' : 'hover'}>
               <div className={styles['home-footer__info__follow-content__account']} onClick={() => _hmt.push(['_trackEvent', 'footer按钮', '点击', '官方抖音'])}>
                 <img src={require('@/assets/footer/douyin_logo.png')} alt="contact_us" /><span>官方抖音</span>
               </div>
             </Popover>
             <div className={styles['home-footer__info__follow-content__divide']}>|</div>
-            <Popover placement="top" content={<img width="150" src="http://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
-              <div className={styles['home-footer__info__follow-content__account']}><img src="http://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" /><span>商务合作</span></div>
+            <Popover placement="top" content={<img width="150" src="https://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" />} trigger={isMinScreen ? 'click' : 'hover'}>
+              <div className={styles['home-footer__info__follow-content__account']}><img src="https://cdn.cfeiou.cn/cfeiou-web-image/contact_us.jpg" alt="contact_us" /><span>商务合作</span></div>
             </Popover>
           </div>
         </div>
